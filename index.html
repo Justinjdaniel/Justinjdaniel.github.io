@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Justin J Daniel</title>
 
-    <!-- Bootstrap cdn -->
+    <link
+      rel="shortcut icon"
+      href="https://cdn4.iconfinder.com/data/icons/web-development-5/500/developer-api-coding-screen-512.png"
+      type="image/x-icon"
+    />
+
+    <!-- Bootstrap 5 CSS only link -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- FontAwesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous"
     />
 
@@ -38,7 +52,7 @@
             <ul class="navbar-nav mx-auto translate-middle-x mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active fw-bold" aria-current="page" href="#"
-                  >Home</a
+                  ><i class="fas fa-home"></i> Home</a
                 >
               </li>
               <li class="nav-item">
@@ -51,26 +65,42 @@
     </header>
 
     <main>
-      <section class="section01">
-        <div
-          class="name display-3 position-absolute top-50 start-50 translate-middle fw-bolder"
-        >
+      <section
+        class="section01 position-absolute top-50 start-50 translate-middle"
+      >
+        <div class="display-3 fw-bolder text-end">
           I'm Justin J
-        </div>
-        <div
-          class="developer display-6 position-absolute top-50 start-50 translate-middle fw-bolder"
-        >
-          Blockchain & Web Developer
+          <h2 class="fw-bolder">Blockchain & Web Developer</h2>
         </div>
       </section>
     </main>
 
-    <footer class="">
-      <p
-        class="copyright position-absolute bottom-0 start-50 translate-middle-x"
+    <section
+      class="maintenance text-center text-white position-absolute top-50 start-50 translate-middle"
+    >
+      <div
+        class="text-center text-white position-absolute top-50 start-50 translate-middle"
       >
-        Copyright 2020
+        <h1 class="dispaly-5">Site under maintenance 🚧</h1>
+        <h3 id="messageInfo">Will be back in</h3>
+        <h4 id="countdown" class="display-5"></h4>
+        <h2>Thank you for visiting</h2>
+      </div>
+    </section>
+
+    <footer class="position-absolute bottom-0 start-50 translate-middle-x">
+      <p class="text-center mt-5">
+        Copyright &copy 2021 by
+        <a href="#" class="text-decoration-none text-secondary">Justin J</a>
       </p>
     </footer>
   </body>
+  <!-- Bootstrap 5 JavaScript Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Countdown -->
+  <script src="./script.js"></script>
 </html>
