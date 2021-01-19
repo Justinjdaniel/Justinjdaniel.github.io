@@ -27,6 +27,9 @@ body::-webkit-scrollbar-thumb {
 .maintenance {
   background-color: rgba(30, 30, 36, 0.8);
   border-radius: 10px;
-  height: 95vh;
-  width: 95vw;
+  height: 97vh;
+  width: 97vw;
+}
+footer .design{
+  font-size: 70%;
 }
