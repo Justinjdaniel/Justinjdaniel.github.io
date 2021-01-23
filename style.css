@@ -78,6 +78,7 @@ section {
   background-size: cover;
   background-attachment: fixed;
   height: 90vh;
+  min-height: 40rem;
 }
 #contact-me .card {
   margin: auto;
