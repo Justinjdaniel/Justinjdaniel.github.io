@@ -18,7 +18,7 @@ const Nav = () => {
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-full mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -44,7 +44,7 @@ const Nav = () => {
                     alt="Logo"
                   />
                 </div>
-                <div className="text-white uppercase py-2 ml-2 text-lg font-bold hidden lg:block hover:text-purple-600">
+                <div className="text-white uppercase py-2 ml-2 text-lg font-bold hidden lg:block hover:text-purple-300">
                   Justin J Daniel
                 </div>
                 <div className="hidden sm:block sm:ml-6">
@@ -57,7 +57,7 @@ const Nav = () => {
                           item.current
                             ? 'bg-gray-900 text-white'
                             : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-3 rounded-md text-sm font-medium'
+                          'px-7 py-3 rounded-3xl text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -71,6 +71,7 @@ const Nav = () => {
                 <a
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mx-3"
                   href="https://github.com/justinjdaniel"
+                  target="_blank"
                 >
                   <span className="sr-only">Github Link</span>
                   <FaGithub className="h-6 w-6" aria-hidden="true" />
@@ -78,6 +79,7 @@ const Nav = () => {
                 <a
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                   href="https://www.linkedin.com/in/justin-j-daniel/"
+                  target="_blank"
                 >
                   <span className="sr-only">Github Link</span>
                   <FaLinkedinIn className="h-6 w-6" aria-hidden="true" />
