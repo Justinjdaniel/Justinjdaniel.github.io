@@ -1,11 +1,11 @@
 
 const Header = () => {
   return (
-    <div>
-      <h1 className="">
+    <div className="p-10">
+      <h1>
         <span>Justin J Daniel</span> Bio
       </h1>
-      <p className="">Sup Bro this is a paragraph</p>
+      <p className="text-sm">Sup Bro this is a paragraph</p>
     </div>
   );
 };
