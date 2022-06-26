@@ -1,18 +1,21 @@
-import { Button, MantineProvider } from '@mantine/core';
+import { Box, Button, Container, MantineProvider } from '@mantine/core';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-
-//App component that renders the MantineProvider
+//App component that renders routes which are wrapped in the MantineProvider.
+// Also some default theme are changed.
 const App = () => {
   return (
     <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
       theme={{
         // Override any other properties from default theme
-        colorScheme: 'dark',
-        fontFamily: 'Open Sans, sans serif',
-        spacing: { xs: 15, sm: 20, md: 25, lg: 30, xl: 40 },
+        fontFamily: 'Poppins, Open Sans, sans serif',
       }}
     >
-      <MyApp />
+      <BrowserRouter>
+        <MyApp />
+      </BrowserRouter>
     </MantineProvider>
   );
 };
@@ -21,15 +24,13 @@ export default App;
 //  This component is the root of this application
 const MyApp = () => {
   return (
-    <>
-      This is a initial component
-      <Button className="my-button" mx={20}>
-        My button
-      </Button>
-      <Button<'a'> component="a" href="#">
-        Anchor button
-      </Button>
-      React router button
-    </>
+    <Box p="md">
+      <Container size="xl">
+        here we are adding new components
+        <Button<'a'> component="a" href="#" mx={20}>
+          Anchor button
+        </Button>
+      </Container>
+    </Box>
   );
 };
