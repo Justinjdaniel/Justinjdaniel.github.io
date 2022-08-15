@@ -1,4 +1,4 @@
-import { Box,  Container } from '@mantine/core';
+import { Box, Container } from '@mantine/core';
 
 const Home = () => {
   return (

@@ -1,5 +1,3 @@
-import { Box, Container } from '@mantine/core';
-
 const About = () => {
   return (
     <>

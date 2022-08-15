@@ -1,6 +1,4 @@
-import { Box, Card, } from '@mantine/core';
-import { Link } from 'react-router-dom';
-import { BadgeCard } from '../components/ProjectCard';
+import { Card } from '@mantine/core';
 
 const Projects = () => {
   return (
