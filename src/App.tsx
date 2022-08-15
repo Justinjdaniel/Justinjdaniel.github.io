@@ -1,5 +1,13 @@
-import { Box, Button, Card, Container, MantineProvider } from '@mantine/core';
-import { BrowserRouter, Link, Outlet, Route, Routes } from 'react-router-dom';
+import { MantineProvider } from '@mantine/core';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ProjectLayout from './layout/ProjectLayout';
+import About from './view/About';
+import Blog from './view/Blog';
+import Contact from './view/Contact';
+import Home from './view/Home';
+import NotFound from './view/NotFound';
+import Project from './view/Project';
+import Projects from './view/Projects';
 
 //App component that renders routes which are wrapped in the MantineProvider.
 // Also some default theme are changed.
@@ -30,115 +38,3 @@ const App = () => {
   );
 };
 export default App;
-
-//  This component is the root of this application
-const Home = () => {
-  const navLinks = [
-    {
-      label: 'About',
-      to: '/about',
-    },
-    {
-      label: 'Contact',
-      to: '/contact',
-    },
-    {
-      label: 'Projects',
-      to: '/projects',
-    },
-    {
-      label: 'Blog',
-      to: '/blog',
-    },
-  ];
-
-  return (
-    <Box p='md'>
-      <Container size='xl'>
-        <h1>Home</h1>
-        here we are adding new components
-        {navLinks.map((link, i) => (
-          <Button key={i} m={2}>
-            <Link to={link.to}>{link.label}</Link>
-          </Button>
-        ))}
-      </Container>
-    </Box>
-  );
-};
-
-// This is a layout
-const ProjectLayout = () => {
-  return (
-    <Box p='md'>
-      <Container size='xl'>
-        <h1>Projects</h1>
-        <Outlet />
-      </Container>
-    </Box>
-  );
-};
-
-const About = () => {
-  return (
-    <Box p='md'>
-      <Container size='xl'>
-        <h1>About</h1>
-        <p>This is a simple example of a React component that renders HTML.</p>
-      </Container>
-    </Box>
-  );
-};
-const Projects = () => {
-  return (
-    <Box>
-      <Card>
-        <h2>Project Name</h2>
-        <p>Project Description.</p>
-      </Card>
-    </Box>
-  );
-};
-const Project = () => {
-  return (
-    <Box p='md'>
-      <Container size='xl'>
-        <h1>Project</h1>
-        <p>This is a simple example of a React component that renders HTML.</p>
-      </Container>
-    </Box>
-  );
-};
-
-const Contact = () => {
-  return (
-    <Box p='md'>
-      <Container size='xl'>
-        <h1>Contact</h1>
-        <p>This is a simple example of a React component that renders HTML.</p>
-      </Container>
-    </Box>
-  );
-};
-
-const Blog = () => {
-  return (
-    <Box p='md'>
-      <Container size='xl'>
-        <h1>Blog</h1>
-        <p>This is a simple example of a React component that renders HTML.</p>
-      </Container>
-    </Box>
-  );
-};
-
-const NotFound = () => {
-  return (
-    <Box p='md'>
-      <Container size='xl'>
-        <h1>Not Found</h1>
-        <p>404 - Page not found</p>
-      </Container>
-    </Box>
-  );
-};
