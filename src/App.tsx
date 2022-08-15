@@ -1,5 +1,6 @@
 import { MantineProvider } from '@mantine/core';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PageLayout from './layout/PageLayout';
 import ProjectLayout from './layout/ProjectLayout';
 import About from './view/About';
 import Blog from './view/Blog';
@@ -22,16 +23,18 @@ const App = () => {
       }}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='contact' element={<Contact />} />
-          <Route path='projects' element={<ProjectLayout />}>
-            <Route index element={<Projects />} />
-            <Route path=':id' element={<Project />} />
+          <Route path='/' element={<PageLayout />}>
+            <Route index element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='contact' element={<Contact />} />
+            <Route path='projects' element={<ProjectLayout />}>
+              <Route index element={<Projects />} />
+              <Route path=':id' element={<Project />} />
+            </Route>
+            <Route path='blog' element={<Blog />} />
+            <Route path='404' element={<NotFound />} />
+            <Route path='*' element={<NotFound />} />
           </Route>
-          <Route path='blog' element={<Blog />} />
-          <Route path='404' element={<NotFound />} />
-          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </MantineProvider>
