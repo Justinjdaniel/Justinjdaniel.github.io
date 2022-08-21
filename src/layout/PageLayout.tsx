@@ -1,44 +1,19 @@
 import { Box, Container } from '@mantine/core';
 import { Outlet } from 'react-router-dom';
+import { FooterCentered } from '../components/Footer';
 import { HeaderResponsive } from '../components/Header';
+import { navLinks } from '../routes';
 
 const PageLayout = () => {
-  const navLinks = [
-    {
-      label: 'About',
-      link: '/about',
-    },
-    {
-      label: 'Contact',
-      link: '/contact',
-    },
-    {
-      label: 'Projects',
-      link: '/projects',
-    },
-    {
-      label: 'Blog',
-      link: '/blog',
-    },
-  ];
-
   return (
     <Box p='md'>
       <HeaderResponsive links={navLinks} />
-      <Container size='xl'>
+      <Container size='xl' style={{ minHeight: '60vh' }}>
         <Outlet />
       </Container>
-      <FooterResponsive />
+      <FooterCentered links={navLinks} />
     </Box>
   );
 };
 
 export default PageLayout;
-
-const FooterResponsive = () => {
-  return (
-    <Box p='md'>
-      <p>Footer</p>
-    </Box>
-  );
-};

@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Burger,
   Container,
   createStyles,
@@ -10,6 +11,12 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+// Todo: add logo
+// Todo: add theme change button
+// Todo: add social media buttons as icons
+// Todo: add search button [conditional]
+// Todo: add language button [optional]
 
 const HEADER_HEIGHT = 60;
 
@@ -109,7 +116,6 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
         [classes.linkActive]: active === link.link,
       })}
       onClick={event => {
-        event.preventDefault();
         setActive(link.link);
         close();
       }}>
@@ -121,9 +127,20 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
     <Header height={HEADER_HEIGHT} mb={60} className={classes.root}>
       <Container className={classes.header}>
         {/* <MantineLogo size={28} /> */}
+        <Avatar
+          color='cyan' // temporary
+          component={Link}
+          to='/'
+          // src={...} alt='logo'
+          radius='xl'
+          style={{ textDecoration: 'none' }}>
+          JJD
+        </Avatar>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
+
+        {/* Add theme change button here */}
 
         <Burger
           opened={opened}
