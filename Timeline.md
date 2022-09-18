@@ -1,4 +1,4 @@
-#Timeline
+# Timeline
 
 - Mid-September: make design, workflow and pages needed
 - End-September: complete the layout and routings and basic things
