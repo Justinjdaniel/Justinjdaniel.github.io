@@ -20,7 +20,7 @@ const config = {
  */
 const fonts = {
   body: `'Poppins', ${base.fonts?.body}, system-ui, sans-serif`,
-  heading: `Poppins', ${base.fonts?.heading}, sans-serif`,
+  heading: `'Poppins', ${base.fonts?.heading}, sans-serif`,
   mono: `Menlo, ${base.fonts?.mono}, monospace`,
 };
 
@@ -42,6 +42,6 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ config, fonts, colors });
+const theme = extendTheme({ config, fonts });
 
 export default theme;

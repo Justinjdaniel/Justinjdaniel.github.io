@@ -1,9 +1,20 @@
-import React from 'react'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Container,
+  Flex,
+  Heading,
+  Spacer,
+} from '@chakra-ui/react';
+import React from 'react';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <Box>
+      <Container></Container>
+    </Box>
+  );
+};
 
-export default Footer
+export default Footer;
