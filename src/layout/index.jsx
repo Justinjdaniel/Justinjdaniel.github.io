@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <Box>
       <Header />
-      <Box minH='90vh'>
+      <Box minH='calc( 100vh - 114px )'>
         <Outlet />
       </Box>
       <Footer />
