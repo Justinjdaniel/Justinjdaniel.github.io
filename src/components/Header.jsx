@@ -9,13 +9,14 @@ const Header = () => {
   // Todo add micro-interactions
 
   return (
-    <Box bg='whiteAlpha.200'>
+    <Box bg='whiteAlpha.200' h='50px'>
       <Container maxW='container.xl'>
         <Flex justifyContent='space-between'>
           Header
           <Flex gap='2'>
             <Link to='/'>Home</Link>
             <Link to='/projects'>Projects</Link>
+            <Link to='/blogs'>Blogs</Link>
             <Link to='/about'>About</Link>
           </Flex>
           <Flex gap='2'>
