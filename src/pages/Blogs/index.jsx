@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Icon } from '@chakra-ui/react';
+import { Box, Button, Container, Icon } from '@chakra-ui/react';
 import React from 'react';
 import { IoArrowBack } from 'react-icons/io5';
 import { Link, useLocation } from 'react-router-dom';
@@ -16,7 +16,14 @@ const Blogs = () => {
 
   return (
     <Container maxW='1000px' px='100px' py='25px'>
-      <Button as={Link} to='/blogs' mb='2' alignItems='center' gap='2' variant='link'>
+      <Button
+        as={Link}
+        to='/blogs'
+        mb='2'
+        alignItems='center'
+        gap='2'
+        variant='link'
+      >
         <Icon as={IoArrowBack} />
         Back
       </Button>

@@ -1,6 +1,5 @@
 import {
   chakra,
-  IconButton,
   useColorMode,
   useColorModeValue,
   VisuallyHidden,

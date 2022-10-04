@@ -1,4 +1,4 @@
-import { Box, Container, Flex } from '@chakra-ui/react';
+import { Container, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
 import { Link } from 'react-router-dom';

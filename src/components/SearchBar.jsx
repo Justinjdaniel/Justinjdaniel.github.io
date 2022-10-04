@@ -6,7 +6,6 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { FiSearch } from 'react-icons/fi';
-// import { searchBarQuery } from '../contexts/searchBarContext';
 
 const SearchBar = ({ ...rest }) => {
   const textColor = useColorModeValue('white', 'rgba(255, 255, 255, .85)');
@@ -24,11 +23,8 @@ const SearchBar = ({ ...rest }) => {
     'rgba(255, 255, 255, 0.125)'
   );
 
-  // const { setSearchQuery } = searchBarQuery();
-
   const handleSearchQuery = (query) => {
     console.log(query);
-    // setSearchQuery(query);
   };
 
   return (
