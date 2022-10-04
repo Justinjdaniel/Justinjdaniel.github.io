@@ -1,4 +1,4 @@
-import { blog1 } from './article';
+import { blog1 } from './articles';
 
 const blogs = [...blog1];
 
