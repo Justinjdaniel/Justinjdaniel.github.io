@@ -1,9 +1,12 @@
-import React from 'react'
+import { Container } from '@chakra-ui/react';
+import React from 'react';
 
 const About = () => {
   return (
-    <div>About</div>
-  )
-}
+    <Container maxW='1000px' px={{ base: '40px', md: '80px' }} py='25px'>
+      About
+    </Container>
+  );
+};
 
-export default About
+export default About;
