@@ -1,6 +1,8 @@
 import { Container, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../../components/SearchBar';
+import projects from '../../database/projects';
+import ProjectCard from './ProjectCard';
 
 const Projects = () => {
   return (
@@ -8,6 +10,11 @@ const Projects = () => {
       <Flex justifyContent='space-between' mb='20px' gap='4'>
         <Heading as='h1'>Projects</Heading>
         <SearchBar />
+      </Flex>
+      <Flex w='full' flexDir='column' gap='4'>
+        {projects.map((project, i) => (
+          <ProjectCard project={project} key={i} />
+        ))}
       </Flex>
     </Container>
   );
