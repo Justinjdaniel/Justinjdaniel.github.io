@@ -1,18 +1,20 @@
 import {
   Box,
+  chakra,
   Container,
   Flex,
   Heading,
   Text,
   useColorModeValue,
+  VisuallyHidden,
   Wrap,
   WrapItem,
 } from '@chakra-ui/react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import BigImage from '../../assets/sparrow.jpg';
-import SearchBar from '../../components/SearchBar';
-import blogs from '../../database/blogs';
+import { lab, tech, travel, uiUx } from '../assets';
+import SearchBar from '../components/SearchBar';
+import blogs from '../database/blogs';
 
 // Todo: Add search and filter
 
@@ -23,6 +25,20 @@ const BlogsList = () => {
         <Heading as='h1'>Blogs</Heading>
         <SearchBar />
       </Flex>
+
+      <Flex
+        justifyContent='space-between'
+        w='full'
+        gap='6'
+        mb='6'
+        flexDir={{ base: 'column', lg: 'row' }}
+      >
+        <FilterButton bgImage={lab} label='Lab' />
+        <FilterButton bgImage={tech} label='Tech' />
+        <FilterButton bgImage={uiUx} label='UI/UX' />
+        <FilterButton bgImage={travel} label='Travel' />
+      </Flex>
+
       <Flex
         justifyContent='space-between'
         w='full'
@@ -32,14 +48,14 @@ const BlogsList = () => {
       >
         <BigBlogCard />
         <Wrap spacing='6' justify='space-evenly'>
-          {[...Array(4)].map((e, i) => (
-            <SmallBlogCard />
+          {blogs.map((e, i) => (
+            <SmallBlogCard blog={e} />
           ))}
         </Wrap>
       </Flex>
       <Wrap spacing='6' justify='space-evenly'>
-        {[...Array(8)].map((e, i) => (
-          <SmallBlogCard />
+        {blogs.map((e, i) => (
+          <SmallBlogCard blog={e} />
         ))}
       </Wrap>
     </Container>
@@ -54,13 +70,13 @@ const BigBlogCard = () => {
   const blog = blogs[0];
 
   const handleOnClick = () => {
-    navigate(`/blogs/${blog.id}`, { state: blog });
+    navigate(`/blogs/id=${blog.id}`, { state: blog });
   };
   return (
     <WrapItem
       borderRadius='8px'
       overflow='hidden'
-      bgImage={BigImage}
+      bgImage={blog.headerContent.coverImage}
       bgPosition='center'
       bgRepeat='no-repeat'
       w='full'
@@ -96,14 +112,19 @@ const BigBlogCard = () => {
   );
 };
 
-const SmallBlogCard = () => {
+const SmallBlogCard = ({ blog }) => {
+  const navigate = useNavigate();
   const textColor = useColorModeValue('white', 'rgba(255, 255, 255, .85)');
+  const cardContent = blog?.headerContent;
 
+  const handleOnClick = () => {
+    navigate(`/blogs/id=${blog.id}`, { state: blog });
+  };
   return (
     <WrapItem
       borderRadius='8px'
       overflow='hidden'
-      bgImage={BigImage}
+      bgImage={cardContent.coverImage}
       bgPosition='center'
       bgRepeat='no-repeat'
       w='full'
@@ -114,6 +135,7 @@ const SmallBlogCard = () => {
       bgSize='cover'
       p='2'
       className='blogCard'
+      onClick={() => handleOnClick()}
     >
       <Box
         color={textColor}
@@ -122,7 +144,8 @@ const SmallBlogCard = () => {
         h='60px'
         mt='110px'
         overflow='hidden'
-        borderRadius='8px' p='2'
+        borderRadius='8px'
+        p='2'
         backdropFilter='blur(16px) saturate(180%)'
         sx={{
           '.blogCard:hover &': {
@@ -130,8 +153,45 @@ const SmallBlogCard = () => {
           },
         }}
       >
-        Blog Title
+        {cardContent.title}
       </Box>
     </WrapItem>
+  );
+};
+
+const FilterButton = ({ label, ...rest }) => {
+  return (
+    <chakra.button
+      rounded='15px'
+      w='200px'
+      h='100px'
+      display={'inline-flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      transition={'background 0.3s ease'}
+      bgPosition='center'
+      bgRepeat='no-repeat'
+      cursor='pointer'
+      objectFit='cover'
+      bgSize='cover'
+      color='white'
+      backdropFilter='blur(16px) saturate(180%)'
+      brightness='40%'
+      filter='grayscale(60%)'
+      _hover={{
+        brightness: '100%',
+        filter: 'grayscale(20%)',
+      }}
+      {...rest}
+    >
+      <VisuallyHidden> {label}</VisuallyHidden>
+      <Heading
+        bgClip='text'
+        bgGradient='linear(to-br, teal, teal.200)'
+        fontWeight='extrabold'
+      >
+        {label}
+      </Heading>
+    </chakra.button>
   );
 };

@@ -5,8 +5,8 @@ import Layout from './layout';
 const Home = React.lazy(() => import('./pages/Home')); //Todo remove lazy in homepage after development
 const Projects = React.lazy(() => import('./pages/Projects'));
 const About = React.lazy(() => import('./pages/About'));
-const Blogs = React.lazy(() => import('./pages/Blogs/index'));
-const BlogsList = React.lazy(() => import('./pages/Blogs/BlogsList'));
+const Blog = React.lazy(() => import('./pages/Blog'));
+const BlogsList = React.lazy(() => import('./pages/BlogsList'));
 const NoMatch = React.lazy(() => import('./pages/NoMatch'));
 
 // Todo updating the app to use one of the new routers from 6.4.; ref: https://reactrouter.com/en/main/routers/picking-a-router
@@ -46,7 +46,7 @@ function App() {
               path=':blogId'
               element={
                 <React.Suspense fallback={<>...</>}>
-                  <Blogs />
+                  <Blog />
                 </React.Suspense>
               }
             />
