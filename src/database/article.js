@@ -1,6 +1,7 @@
-import HeaderImage from '../assets/sparrow.avif';
+import ParrotImage from '../assets/parrot.jpg';
+import HeaderImage from '../assets/sparrow.jpg';
 
-export const blogContent = {
+const article1 = {
   blogId: 1,
   description:
     'Lorem ipsum dolor sit amet, consectetur elit. Vivamus imperdiet ut quam sit amet vehicula.',
@@ -56,9 +57,9 @@ export const blogContent = {
         'This is paragraph 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet ut quam sit amet vehicula. Donec sit amet facilisis quam. Integer mollis, urna accumsan tempor hendrerit, risus neque tincidunt neque, in aliquam elit eros quis tortor. ',
       gallery: [
         { src: HeaderImage, alt: 'Alt Image 1' },
-        { src: HeaderImage, alt: 'Alt Image 2' },
+        { src: ParrotImage, alt: 'Alt Image 2' },
         { src: HeaderImage, alt: 'Alt Image 3' },
-        { src: HeaderImage, alt: 'Alt Image 4' },
+        { src: ParrotImage, alt: 'Alt Image 4' },
       ],
 
       paragraph3:
@@ -68,3 +69,5 @@ export const blogContent = {
     },
   ],
 };
+
+export const blog1 = [article1];
