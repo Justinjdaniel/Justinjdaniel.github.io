@@ -3,7 +3,7 @@ import {
   Container,
   Stack,
   Text,
-  useColorModeValue
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
 import SocialButton from './Button/SocialButton';
@@ -31,14 +31,11 @@ const Footer = () => {
         <Stack direction='row' spacing={6}>
           <SocialButton
             label='LinkedIn'
-            href='https://github.com/justinjdaniel'
+            href='https://www.linkedin.com/in/justin-j-daniel/'
           >
             <IoLogoLinkedin />
           </SocialButton>
-          <SocialButton
-            label='Github'
-            href='https://www.linkedin.com/in/justin-j-daniel/'
-          >
+          <SocialButton label='Github' href='https://github.com/justinjdaniel'>
             <IoLogoGithub />
           </SocialButton>
         </Stack>
