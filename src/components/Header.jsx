@@ -1,6 +1,9 @@
-import { Box, Container, Flex, Link as ExternalLink } from '@chakra-ui/react';
+import { Box, Container, Flex } from '@chakra-ui/react';
 import React from 'react';
+import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import SocialButton from './Button/SocialButton';
+import { ColorModeSwitcher } from './ColorModeSwitcher';
 
 const Header = () => {
   // Todo add logo
@@ -9,27 +12,34 @@ const Header = () => {
   // Todo add micro-interactions
 
   return (
-    <Box bg='whiteAlpha.200' h='50px'>
+    <Flex bg='whiteAlpha.200' h='50px' w='full' alignItems='center'>
       <Container maxW='container.xl'>
-        <Flex justifyContent='space-between'>
+        <Flex justifyContent='space-between' alignItems='center'>
           Header
-          <Flex gap='2'>
+          <Flex gap='4'>
             <Link to='/'>Home</Link>
             <Link to='/projects'>Projects</Link>
             <Link to='/blogs'>Blogs</Link>
             <Link to='/about'>About</Link>
           </Flex>
-          <Flex gap='2'>
-            <ExternalLink href='https://github.com' isExternal>
-              Github
-            </ExternalLink>
-            <ExternalLink href='https://linkedin.com' isExternal>
-              LinkedIn
-            </ExternalLink>
+          <Flex gap='4'>
+            <SocialButton
+              label='LinkedIn'
+              href='https://www.linkedin.com/in/justin-j-daniel/'
+            >
+              <IoLogoLinkedin />
+            </SocialButton>
+            <SocialButton
+              label='Github'
+              href='https://github.com/justinjdaniel'
+            >
+              <IoLogoGithub />
+            </SocialButton>
+            <ColorModeSwitcher />
           </Flex>
         </Flex>
       </Container>
-    </Box>
+    </Flex>
   );
 };
 
