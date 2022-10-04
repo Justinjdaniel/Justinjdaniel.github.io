@@ -15,7 +15,7 @@ const BlogGallery = ({ gallery }) => {
       <WrapItem
         as={Image}
         src={gallery[selected].src}
-        alt='{image.alt}'
+        alt={gallery[selected].alt}
         maxW='800px'
         boxSize='full'
         w='calc( 100% - 20px)'

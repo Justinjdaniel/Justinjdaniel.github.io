@@ -1,6 +1,7 @@
-import { Box, Container } from '@chakra-ui/react';
+import { Box, Button, Container, Flex, Icon } from '@chakra-ui/react';
 import React from 'react';
-import blogs from '../../database/blogs';
+import { IoArrowBack } from 'react-icons/io5';
+import { Link, useLocation } from 'react-router-dom';
 import Blockquote from './Blockquote';
 import BlogGallery from './BlogGallery';
 import BlogHeading from './BlogHeading';
@@ -10,12 +11,19 @@ import HeaderImageCard from './HeaderImageCard';
 import SummaryCard from './SummaryCard';
 
 const Blogs = () => {
+  const location = useLocation();
+  const blog = location.state;
+
   return (
-    <Container maxW='1000px' p='100px'>
+    <Container maxW='1000px' px='100px' py='25px'>
+      <Button as={Link} to='/blogs' mb='2' alignItems='center' gap='2' variant='link'>
+        <Icon as={IoArrowBack} />
+        Back
+      </Button>
       <article w='full'>
-        <HeaderImageCard headerContent={blogs[0].headerContent} />
-        <SummaryCard summary={blogs[0].summary} />
-        <MainArticle articleContent={blogs[0].articleContent} />
+        <HeaderImageCard headerContent={blog.headerContent} />
+        <SummaryCard summary={blog.summary} />
+        <MainArticle articleContent={blog.articleContent} />
       </article>
     </Container>
   );

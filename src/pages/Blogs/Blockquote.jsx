@@ -1,8 +1,8 @@
-import { Box } from '@chakra-ui/react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
 const Blockquote = ({ content }) => {
-  const blockquoteColor = true ? 'gray.900' : '#f8f8f8';
+  const blockquoteColor = useColorModeValue('#f8f8f8', 'gray.900');
 
   return (
     <Box

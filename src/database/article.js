@@ -2,7 +2,7 @@ import ParrotImage from '../assets/parrot.jpg';
 import HeaderImage from '../assets/sparrow.jpg';
 
 const article1 = {
-  blogId: 1,
+  id: 1,
   description:
     'Lorem ipsum dolor sit amet, consectetur elit. Vivamus imperdiet ut quam sit amet vehicula.',
   headerContent: {
