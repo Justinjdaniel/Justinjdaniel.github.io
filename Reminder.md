@@ -1,5 +1,14 @@
 # Reminders
 
+## TODO
+
+- change the blog card to project card
+- add a new page to show details of single project
+- create a logo
+- create about page
+- create a doc file of content needed to include in the website
+- create a resume a page in the website
+
 - animated background
 - Add SEO
 - Add Eslint configuration
