@@ -16,7 +16,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route
+            index
+            element={
+              <React.Suspense fallback={<>...</>}>
+                <Home />
+              </React.Suspense>
+            }
+          />
           <Route
             path='about'
             element={

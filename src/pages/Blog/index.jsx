@@ -1,4 +1,4 @@
-import { Box, Button, Container, Icon } from '@chakra-ui/react';
+import { Box, Button, Container, Flex, Icon } from '@chakra-ui/react';
 import React from 'react';
 import { IoArrowBack } from 'react-icons/io5';
 import { Link, useLocation } from 'react-router-dom';
@@ -15,30 +15,38 @@ const Blogs = () => {
   const blog = location.state;
 
   return (
-    <Container maxW='1000px' px='100px' py='25px'>
-      <Button
-        as={Link}
-        to='/blogs'
-        mb='2'
-        alignItems='center'
-        gap='2'
-        variant='link'
-      >
-        <Icon as={IoArrowBack} />
-        Back
-      </Button>
-      <article w='full'>
-        <HeaderImageCard headerContent={blog.headerContent} />
-        <SummaryCard summary={blog.summary} />
-        <MainArticle articleContent={blog.articleContent} />
-      </article>
-    </Container>
+    <Flex>
+      <Container maxW='1000px' px='100px' py='25px' mt='50px'>
+        <Button
+          as={Link}
+          to='/blogs'
+          mb='2'
+          alignItems='center'
+          gap='2'
+          variant='link'
+        >
+          <Icon as={IoArrowBack} />
+          Back
+        </Button>
+        <article w='full'>
+          <HeaderImageCard headerContent={blog.headerContent} />
+          <SummaryCard summary={blog.summary} />
+          <MainArticle articleContent={blog.articleContent} />
+        </article>
+      </Container>
+    </Flex>
   );
 };
 
 export default Blogs;
 
 const MainArticle = ({ articleContent }) => {
+  /**
+   * to determine and assign data to which element the section belongs.
+   * @param {ReactNode} section a section of page
+   * @param {element.name} element HTML tag element name
+   * @returns return  HTML element.
+   */
   const handleContent = (section, element) => {
     if (element.startsWith('heading'))
       return <BlogHeading heading={section[element]} />;

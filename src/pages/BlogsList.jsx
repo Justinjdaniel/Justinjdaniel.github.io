@@ -1,3 +1,6 @@
+// TODO: swap the card with current projects design
+// TODO: add search and filter
+
 import {
   Box,
   chakra,
@@ -16,49 +19,54 @@ import { lab, tech, travel, uiUx } from '../assets';
 import SearchBar from '../components/SearchBar';
 import blogs from '../database/blogs';
 
-// Todo: Add search and filter
-
 const BlogsList = () => {
   return (
-    <Container maxW='1000px' px={{ base: '40px', md: '80px' }} py='25px'>
-      <Flex justifyContent='space-between' mb='20px' gap='4'>
-        <Heading as='h1'>Blogs</Heading>
-        <SearchBar />
-      </Flex>
-
-      <Flex
-        justifyContent='space-between'
-        w='full'
-        gap='6'
-        mb='6'
-        flexDir={{ base: 'column', lg: 'row' }}
+    <Flex>
+      <Container
+        maxW='1000px'
+        px={{ base: '40px', md: '80px' }}
+        py='25px'
+        mt='50px'
       >
-        <FilterButton bgImage={lab} label='Lab' />
-        <FilterButton bgImage={tech} label='Tech' />
-        <FilterButton bgImage={uiUx} label='UI/UX' />
-        <FilterButton bgImage={travel} label='Travel' />
-      </Flex>
+        <Flex justifyContent='space-between' mb='20px' gap='4'>
+          <Heading as='h1'>Blogs</Heading>
+          <SearchBar />
+        </Flex>
 
-      <Flex
-        justifyContent='space-between'
-        w='full'
-        gap='6'
-        mb='6'
-        flexDir={{ base: 'column', lg: 'row' }}
-      >
-        <BigBlogCard />
+        <Flex
+          justifyContent='space-between'
+          w='full'
+          gap='6'
+          mb='6'
+          flexDir={{ base: 'column', lg: 'row' }}
+        >
+          <FilterButton bgImage={lab} label='Lab' />
+          <FilterButton bgImage={tech} label='Tech' />
+          <FilterButton bgImage={uiUx} label='UI/UX' />
+          <FilterButton bgImage={travel} label='Travel' />
+        </Flex>
+
+        <Flex
+          justifyContent='space-between'
+          w='full'
+          gap='6'
+          mb='6'
+          flexDir={{ base: 'column', lg: 'row' }}
+        >
+          <BigBlogCard />
+          <Wrap spacing='6' justify='space-evenly'>
+            {blogs.map((blog, i) => (
+              <SmallBlogCard blog={blog} key={i} />
+            ))}
+          </Wrap>
+        </Flex>
         <Wrap spacing='6' justify='space-evenly'>
           {blogs.map((e, i) => (
-            <SmallBlogCard blog={e} />
+            <SmallBlogCard blog={e} key={i} />
           ))}
         </Wrap>
-      </Flex>
-      <Wrap spacing='6' justify='space-evenly'>
-        {blogs.map((e, i) => (
-          <SmallBlogCard blog={e} />
-        ))}
-      </Wrap>
-    </Container>
+      </Container>
+    </Flex>
   );
 };
 
@@ -69,6 +77,7 @@ const BigBlogCard = () => {
   const navigate = useNavigate();
   const blog = blogs[0];
 
+  /** redirects to the clicked blog with data as state*/
   const handleOnClick = () => {
     navigate(`/blogs/id=${blog.id}`, { state: blog });
   };

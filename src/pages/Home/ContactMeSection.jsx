@@ -1,21 +1,24 @@
+// TODO: mobile responsiveness
+
 import { Container, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
 
-const About = () => {
+const ContactMeSection = (props) => {
   return (
-    <Flex>
+    <Flex {...props}>
       <Container
         maxW='1000px'
         px={{ base: '40px', md: '80px' }}
         py='25px'
-        mt='50px'
+        border='1px solid'
+        htmlFor='projects_section'
       >
-        <Flex justifyContent='space-between' mb='20px' gap='4'>
-          <Heading as='h1'>About</Heading>
+        <Flex>
+          <Heading as='h2'>Contact Me Section</Heading>
         </Flex>
       </Container>
     </Flex>
   );
 };
 
-export default About;
+export default ContactMeSection;
