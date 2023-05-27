@@ -1,16 +1,22 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "0.4.1",
+  "version": "0.4.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "author": {
     "name": "Justin J Daniel",
     "email": "justinjdaniel@duck.com"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/Justinjdaniel/Justinjdaniel.github.io"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
