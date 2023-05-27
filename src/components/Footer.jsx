@@ -8,7 +8,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import SocialButton from './Button/SocialButton';
+import SocialButton from './Buttons/SocialButton';
 
 const Footer = (props) => {
   return (
@@ -27,7 +27,7 @@ const Footer = (props) => {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
       >
-        <Logo />
+        {/* <Logo /> */}
         <Text textAlign='center'>
           © {new Date().getFullYear()} | Made With Passion
         </Text>

@@ -5,6 +5,8 @@ import App from './App';
 import './index.css';
 import theme from './theme';
 
+// TODO: add PWA in after initial development. ref: https://vite-pwa-org.netlify.app/guide/
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* The color mode script needs to be added before the content inside the body tag for local storage syncing to work correctly. */}

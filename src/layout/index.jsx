@@ -6,12 +6,7 @@ import Header from '../components/Header';
 
 const Layout = () => {
   return (
-    <Flex
-      w='full'
-      flexDir='column'
-      justifyContent='space-between'
-      htmlFor='main_layout'
-    >
+    <Flex w='full' flexDir='column' justifyContent='space-between' htmlFor='main_layout' scrollSnapType='y mandatory'>
       <Header htmlFor='header' />
       <Box minH='calc(100vh - 60px)' htmlFor='wrapper'>
         <Outlet />
