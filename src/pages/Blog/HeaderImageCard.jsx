@@ -1,10 +1,4 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Icon,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Flex, Heading, Icon, Text } from '@chakra-ui/react';
 import React from 'react';
 import { IoPricetagSharp, IoTime } from 'react-icons/io5';
 import { getFormattedDate } from '../../utils';
@@ -24,13 +18,7 @@ const HeaderImageCard = ({ headerContent }) => {
       p='50px'
     >
       <Flex pb='20px' justify='space-between'>
-        <Heading
-          fontSize='1.125rem'
-          fontWeight='bold'
-          textTransform='uppercase'
-          letterSpacing='0.4rem'
-          opacity='0.9'
-        >
+        <Heading fontSize='1.125rem' fontWeight='bold' textTransform='uppercase' letterSpacing='0.4rem' opacity='0.9'>
           {!!headerContent.type ? headerContent.type : 'article'}
         </Heading>
         <Flex alignItems='center' opacity='0.6' fontSize='0.875rem'>
@@ -41,13 +29,7 @@ const HeaderImageCard = ({ headerContent }) => {
         </Flex>
       </Flex>
       <Box pt='50px'>
-        <Flex
-          flexDir='row'
-          gap='2'
-          alignItems='center'
-          opacity='0.75'
-          mb='12px'
-        >
+        <Flex flexDir='row' gap='2' alignItems='center' opacity='0.75' mb='12px'>
           <Icon as={IoPricetagSharp} w={5} h={5} mr='10px' />
           {headerContent.tags.length > 0 && (
             <Text fontSize='0.875rem' textTransform='capitalize'>
@@ -55,13 +37,7 @@ const HeaderImageCard = ({ headerContent }) => {
             </Text>
           )}
         </Flex>
-        <Heading
-          as='h1'
-          m='20px 0'
-          fontSize='3rem'
-          fontWeight='semibold'
-          opacity='0.9'
-        >
+        <Heading as='h1' m='20px 0' fontSize='3rem' fontWeight='semibold' opacity='0.9'>
           {headerContent?.title}
         </Heading>
         <Text mt='10px' opacity='0.75' lineHeight='1.75'>

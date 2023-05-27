@@ -1,27 +1,13 @@
-import {
-  Badge,
-  Button,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Badge, Button, Flex, Heading, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 import { IoArrowForward, IoGlobe, IoLogoGithub } from 'react-icons/io5';
-import SocialButton from '../../components/Button/SocialButton';
+import SocialButton from '../../components/Buttons/SocialButton';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, ...rest }) => {
   const textColor = useColorModeValue('white', 'rgba(255, 255, 255, .85)');
-  const hoverBgColor = useColorModeValue(
-    'rgba(209, 213, 219, 0.30)',
-    'rgba(17, 25, 40, 0.75)'
-  );
+  const hoverBgColor = useColorModeValue('rgba(209, 213, 219, 0.30)', 'rgba(17, 25, 40, 0.75)');
 
-  const bgColor = useColorModeValue(
-    'rgba(209, 213, 219, 0.20)',
-    'rgba(17, 25, 40, 0.5)'
-  );
+  const bgColor = useColorModeValue('rgba(209, 213, 219, 0.20)', 'rgba(17, 25, 40, 0.5)');
   return (
     <Flex
       w='full'
@@ -32,6 +18,7 @@ const ProjectCard = ({ project }) => {
       bgRepeat='no-repeat'
       bgSize='cover'
       cursor='pointer'
+      {...rest}
     >
       <Flex
         w='full'
@@ -44,11 +31,7 @@ const ProjectCard = ({ project }) => {
         backdropFilter='blur(16px) saturate(180%)'
         _hover={{ bg: hoverBgColor }}
       >
-        <Image
-          src={project.cover_image}
-          borderRadius='15px'
-          border={`2px solid ${textColor}`}
-        />
+        <Image src={project.cover_image} borderRadius='15px' border={`2px solid ${textColor}`} />
         <Flex flexDir='column' justifyContent='space-between'>
           <Flex flexDir='column'>
             <Heading size='md' textTransform='capitalize' mb='2'>
@@ -65,28 +48,15 @@ const ProjectCard = ({ project }) => {
               {project.description}
             </Text>
             <Flex gap='2'>
-              <SocialButton
-                label={project.project_name}
-                href={project.repo_link}
-                title='GitHub link'
-              >
+              <SocialButton label={project.project_name} href={project.repo_link} title='GitHub link'>
                 <IoLogoGithub />
               </SocialButton>
-              <SocialButton
-                label={project.project_name}
-                href={project.repo_link}
-                title='Demo website'
-              >
+              <SocialButton label={project.project_name} href={project.repo_link} title='Demo website'>
                 <IoGlobe />
               </SocialButton>
             </Flex>
           </Flex>
-          <Button
-            colorScheme=''
-            variant='link'
-            justifyContent='flex-end'
-            rightIcon={<IoArrowForward />}
-          >
+          <Button colorScheme='' variant='link' justifyContent='flex-end' rightIcon={<IoArrowForward />}>
             Read more...
           </Button>
         </Flex>

@@ -4,14 +4,7 @@ import React, { useState } from 'react';
 const BlogGallery = ({ gallery }) => {
   const [selected, setSelected] = useState(0);
   return (
-    <Wrap
-      spacing='20px'
-      mt='40px'
-      align='center'
-      justify='center'
-      cursor='pointer'
-      mb='20px'
-    >
+    <Wrap spacing='20px' mt='40px' align='center' justify='center' cursor='pointer' mb='20px'>
       <WrapItem
         as={Image}
         src={gallery[selected].src}

@@ -6,14 +6,8 @@ import React from 'react';
 const ProjectsSection = (props) => {
   return (
     <Flex {...props}>
-      <Container
-        maxW='1000px'
-        px={{ base: '40px', md: '80px' }}
-        py='25px'
-        border='1px solid'
-        htmlFor='projects_section'
-      >
-        <Flex>
+      <Container maxW='1000px' px={{ base: '10', md: '20' }} py='6' border='1px solid' htmlFor='projects_section'>
+        <Flex h='full' justifyContent='center' alignItems='center'>
           <Heading as='h2'>Projects Section</Heading>
         </Flex>
       </Container>

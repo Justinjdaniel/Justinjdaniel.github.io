@@ -17,13 +17,7 @@ const SummaryCard = ({ summary }) => {
           <Text size='sm' color='#999'>
             {summaryItem.title}
           </Text>
-          <Heading
-            mt={{ md: '12px' }}
-            mb='12px'
-            size='lg'
-            fontWeight='medium'
-            textTransform='capitalize'
-          >
+          <Heading mt={{ md: '12px' }} mb='12px' size='lg' fontWeight='medium' textTransform='capitalize'>
             {summaryItem.value} {summaryItem.unit}
           </Heading>
         </Box>

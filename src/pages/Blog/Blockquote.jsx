@@ -13,8 +13,7 @@ const Blockquote = ({ content }) => {
       pos='relative'
       sx={{
         '&::before': {
-          content:
-            'url("https://icons.craftwork.design/static/media/QuotesFill.f65b03951f44e212816420b00909f4df.svg")',
+          content: 'url("https://icons.craftwork.design/static/media/QuotesFill.f65b03951f44e212816420b00909f4df.svg")',
           position: 'absolute',
           top: '-10px',
           left: '-10px',
@@ -22,8 +21,7 @@ const Blockquote = ({ content }) => {
           opacity: 0.4,
         },
         '&::after': {
-          content:
-            'url("https://icons.craftwork.design/static/media/QuotesFill.f65b03951f44e212816420b00909f4df.svg")',
+          content: 'url("https://icons.craftwork.design/static/media/QuotesFill.f65b03951f44e212816420b00909f4df.svg")',
           position: 'absolute',
           bottom: '-10px',
           right: '-10px',
