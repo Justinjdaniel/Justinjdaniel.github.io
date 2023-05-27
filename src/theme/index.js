@@ -10,7 +10,7 @@ import { extendTheme, theme as base } from '@chakra-ui/react';
  * @ref https://chakra-ui.com/docs/styled-system/color-mode
  */
 const config = {
-  initialColorMode: 'system',
+  initialColorMode: 'dark',
   useSystemColorMode: false,
 };
 
