@@ -1,11 +1,12 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
-	// Enable static export mode
 	output: "export",
-	// Change the output directory to 'dist'
-	distDir: "dist",
-	// Add a trailing slash to the URLs
+	// Optional: Add a trailing slash to all paths `/about` -> `/about/`
 	trailingSlash: true,
+	// Optional: Change the output directory `out` -> `dist`
+	distDir: 'dist',
 };
 
 module.exports = nextConfig;
