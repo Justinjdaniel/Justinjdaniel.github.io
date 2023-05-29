@@ -24,6 +24,6 @@
   "eslint.validate": ["javascript", "javascriptreact"], // Enable ESLint for JavaScript
   // Rome settings
   "[javascript]": {
-    "editor.defaultFormatter": "rome.rome" // Use Prettier as the default formatter for JavaScript files
+    "editor.defaultFormatter": "rome.rome" // Use Rome as the default formatter for JavaScript files
   }
 }
