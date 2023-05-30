@@ -1,7 +1,8 @@
 "use client";
-import { Box, Text } from "@chakra-ui/layout";
+import { Box, Text, Flex } from "@chakra-ui/layout";
 import { Link } from "@chakra-ui/next-js";
 import styles from "./page.module.css";
+import Image from "next/image";
 
 export default function Home() {
 	const backgroundGlow = {
@@ -16,7 +17,31 @@ export default function Home() {
 		<main className={styles.main}>
 			<Box className={styles.description}>
 				<Text>Justin J Daniel</Text>
-				<Box>❤️With Passion</Box>
+				<Flex gap="2">
+					<Link
+						href="https://www.linkedin.com/in/justin-j-daniel/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Text>
+							<Image
+								src="linked-in.svg"
+								width={20}
+								height={20}
+								alt="linkedin"
+							/>
+						</Text>
+					</Link>
+					<Link
+						href="https://github.com/Justinjdaniel"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Text>
+							<Image src="github.svg" width={20} height={20} alt="github" />
+						</Text>
+					</Link>
+				</Flex>
 			</Box>
 
 			<Box
@@ -64,7 +89,7 @@ export default function Home() {
 				</Link>
 
 				<Link
-					href="#"
+					href="mailto:justinjdaniel@duck.com"
 					className={styles.card}
 					target="_blank"
 					rel="noopener noreferrer"
@@ -72,7 +97,10 @@ export default function Home() {
 					<Text as="h2">
 						Contact <span>-&gt;</span>
 					</Text>
-					<p>Learn about me!</p>
+					<p>
+						If you have any questions, comments, or feedback, please feel free
+						to contact me. Thank you for your interest in my work.
+					</p>
 				</Link>
 			</Box>
 		</main>
