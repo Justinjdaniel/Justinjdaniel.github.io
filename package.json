@@ -1,5 +1,5 @@
 {
-  "name": "justinjdaniel",
+  "name": "justinjdaniel.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,5 +23,13 @@
   },
   "devDependencies": {
     "rome": "^12.1.2"
-  }
+  },
+  "author": {
+    "name": "Justin J Daniel"
+  },
+  "keywords": [
+    "portfolio",
+    "nextJs",
+    "react"
+  ]
 }
